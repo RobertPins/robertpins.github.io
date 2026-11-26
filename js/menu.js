@@ -1,6 +1,7 @@
 // DVD-style main menu behaviour.
 // - Only one item looks selected at a time (mouse and keyboard share it).
 // - Arrow keys move the selection, Enter opens it, like a remote.
+// - Hovering the title takes the selection off the menu.
 
 (function () {
   var links = Array.prototype.slice.call(
@@ -11,6 +12,15 @@
   links.forEach(function (link) {
     link.addEventListener("mouseenter", function () {
       link.focus({ preventScroll: true });
+    });
+  });
+
+  // Hovering the title clears the menu selection, so only one thing glows.
+  document.querySelectorAll(".name, .pin").forEach(function (el) {
+    el.addEventListener("mouseenter", function () {
+      if (links.indexOf(document.activeElement) !== -1) {
+        document.activeElement.blur();
+      }
     });
   });
 
