@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Robert Pins</title>
+  <meta name="description" content="Comedy writing, sketches, short films and cinematography by Robert Pins.">
+  <meta name="theme-color" content="#05112b">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Robert Pins">
+  <meta property="og:description" content="Comedy writing, sketches, short films and cinematography.">
+  <meta property="og:image" content="https://robertpins.com/assets/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <link rel="preload" href="fonts/NeueHaasDisplay-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/NeueHaasDisplay-XThin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/site.css">
+
+  <!-- Power-on animation: once per visit, and only with JavaScript on -->
+  <script>
+    try {
+      if (!sessionStorage.getItem("rp-booted")) {
+        document.documentElement.classList.add("boot");
+        sessionStorage.setItem("rp-booted", "1");
+      }
+    } catch (e) {}
+  </script>
+  <script src="js/menu.js" defer></script>
+</head>
+<body class="home">
+
+  <div class="screen">
+    <div class="backdrop" aria-hidden="true">
+      <picture>
+        <source srcset="assets/background.avif" type="image/avif">
+        <img src="assets/background.webp" alt="" width="1920" height="1080">
+      </picture>
+    </div>
+
+    <main class="stage">
+      <picture>
+        <source srcset="assets/pushpin.avif" type="image/avif">
+        <img class="pin" src="assets/pushpin.webp" alt="" width="637" height="495">
+      </picture>
+
+      <h1 class="name">
+        <span aria-hidden="true">robert<span class="gap">pins</span></span>
+        <span class="visually-hidden">Robert Pins</span>
+      </h1>
+
+      <nav aria-label="Main menu">
+        <ul class="menu">
+          <li><a href="about.html">about</a></li>
+          <li><a href="video.html">video</a></li>
+          <li><a href="cinematography.html">cinematography</a></li>
+          <li><a href="writing.html">writing</a></li>
+          <li><a href="contact.html">contact</a></li>
+        </ul>
+      </nav>
+    </main>
+  </div>
+
+  <div class="vhs" aria-hidden="true"></div>
+</body>
+</html>
