@@ -4,13 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Cinematography | Robert Pins</title>
-  <meta name="description" content="Stills coming soon.">
+  <meta name="description" content="Film stills by Robert Pins: natural light, static composition, no budget.">
   <meta name="theme-color" content="#05112b">
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="preload" href="fonts/NeueHaasDisplay-Bold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/NeueHaasDisplay-XThin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/NeueHaasDisplay-Roman.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/site.css">
+  <script src="js/stills.js" defer></script>
 </head>
 <body class="page">
 
@@ -28,10 +30,74 @@
     </header>
 
     <main>
-      <h1 class="page-title">cinematography</h1>
-      <p class="page-body">Stills coming soon.</p>
+      <h1 class="page-title page-title--long">cinematography</h1>
+
+      <p class="blurb">I shoot run-and-gun with minimal gear and no budget, prioritizing natural light and static composition (mostly to teach myself how to make interesting work with whatever I have). That way, I can always be making something. Below are some examples of what this approach is producing so far.</p>
+
+      <!-- Stills: put Still1.jpg to Still9.jpg in assets/stills/.
+           To add one, copy an <li> block and change the number.
+           "above-vhs" keeps the stills clear of the scanlines. -->
+      <ul class="stills above-vhs">
+        <li>
+          <button class="still" type="button" aria-label="View still 1 larger">
+            <img src="assets/stills/Still1.jpg" alt="Film still 1" width="1800" height="1080" decoding="async">
+          </button>
+        </li>
+        <li>
+          <button class="still" type="button" aria-label="View still 2 larger">
+            <img src="assets/stills/Still2.jpg" alt="Film still 2" width="1800" height="1080" decoding="async">
+          </button>
+        </li>
+        <li>
+          <button class="still" type="button" aria-label="View still 3 larger">
+            <img src="assets/stills/Still3.jpg" alt="Film still 3" width="1800" height="1080" decoding="async">
+          </button>
+        </li>
+        <li>
+          <button class="still" type="button" aria-label="View still 4 larger">
+            <img src="assets/stills/Still4.jpg" alt="Film still 4" width="1800" height="1080" loading="lazy" decoding="async">
+          </button>
+        </li>
+        <li>
+          <button class="still" type="button" aria-label="View still 5 larger">
+            <img src="assets/stills/Still5.jpg" alt="Film still 5" width="1800" height="1080" loading="lazy" decoding="async">
+          </button>
+        </li>
+        <li>
+          <button class="still" type="button" aria-label="View still 6 larger">
+            <img src="assets/stills/Still6.jpg" alt="Film still 6" width="1800" height="1080" loading="lazy" decoding="async">
+          </button>
+        </li>
+        <li>
+          <button class="still" type="button" aria-label="View still 7 larger">
+            <img src="assets/stills/Still7.jpg" alt="Film still 7" width="1800" height="1080" loading="lazy" decoding="async">
+          </button>
+        </li>
+        <li>
+          <button class="still" type="button" aria-label="View still 8 larger">
+            <img src="assets/stills/Still8.jpg" alt="Film still 8" width="1800" height="1080" loading="lazy" decoding="async">
+          </button>
+        </li>
+        <li>
+          <button class="still" type="button" aria-label="View still 9 larger">
+            <img src="assets/stills/Still9.jpg" alt="Film still 9" width="1800" height="1080" loading="lazy" decoding="async">
+          </button>
+        </li>
+      </ul>
     </main>
   </div>
+
+  <dialog class="lightbox" aria-label="Still viewer">
+    <button class="lb-close" type="button">close</button>
+    <figure class="lb-frame">
+      <img class="lb-img" alt="">
+    </figure>
+    <div class="lb-bar">
+      <button class="lb-prev" type="button" aria-label="Previous still">&lsaquo; prev</button>
+      <span class="lb-count" aria-live="polite">1 / 9</span>
+      <button class="lb-next" type="button" aria-label="Next still">next &rsaquo;</button>
+    </div>
+  </dialog>
 
   <div class="vhs" aria-hidden="true"></div>
 </body>
