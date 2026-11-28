@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Videos | Robert Pins</title>
+  <meta name="description" content="Comedy shorts and commercial parodies by Robert Pins.">
+  <meta name="theme-color" content="#05112b">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preload" href="fonts/NeueHaasDisplay-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/NeueHaasDisplay-XThin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/NeueHaasDisplay-Roman.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/site.css">
+  <script src="js/videos.js" defer></script>
+</head>
+<body class="page">
+
+  <div class="backdrop" aria-hidden="true">
+    <picture>
+      <source srcset="assets/background.avif" type="image/avif">
+      <img src="assets/background.webp" alt="" width="1920" height="1080">
+    </picture>
+  </div>
+
+  <div class="page-wrap">
+    <header class="page-header">
+      <a class="wordmark" href="index.html" aria-label="Robert Pins, main menu">robert<span class="gap">pins</span></a>
+      <a class="back" href="index.html">main menu</a>
+    </header>
+
+    <main>
+      <h1 class="page-title">videos</h1>
+
+      <!-- DVD-style chapter select: jumps to each section below -->
+      <nav aria-label="Video sections">
+        <ul class="chapters">
+          <li><a href="#shorts">comedy shorts</a></li>
+          <li><a href="#parodies">commercial parodies</a></li>
+        </ul>
+      </nav>
+
+      <!--
+        Each video is one <li> block. To fill one in:
+          data-youtube = the ID from the YouTube link (the part after v=)
+          data-vimeo   = or the number from a Vimeo link
+          data-title / data-logline = what shows under the player
+        Thumbnails come from YouTube automatically. To use your own,
+        change the img src to e.g. assets/thumbs/dealbreaker.jpg
+        To add a line under a section title, put
+          <p class="section-blurb">Your sentence.</p>  after the <h2>.
+      -->
+
+      <section class="video-section" id="shorts" aria-labelledby="shorts-title">
+        <h2 class="section-title" id="shorts-title">comedy shorts</h2>
+        <ul class="video-grid above-vhs">
+          <li>
+            <button class="video-card" type="button"
+                    data-youtube="pHn63M4-iFM"
+                    data-title="Dealbreaker"
+                    data-logline="You can’t make an omelette without breaking a few laws.">
+              <span class="thumb thumb--placeholder">
+                <img class="thumb-img" src="https://i.ytimg.com/vi/pHn63M4-iFM/maxresdefault.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" onerror="if(!this.dataset.f){this.dataset.f=1;this.src=this.src.replace('maxresdefault','hqdefault')}else{this.remove()}">
+                <span class="thumb-play">play</span>
+              </span>
+              <span class="card-title">Dealbreaker<span class="card-time">2:58</span></span>
+              <span class="card-logline">You can’t make an omelette without breaking a few laws.</span>
+            </button>
+          </li>
+          <li>
+            <button class="video-card" type="button"
+                    data-youtube="a4PeKHs-CcY"
+                    data-title="What’s the Worst Thing You’ve Ever Done?"
+                    data-logline="He’s in a better place now. Unfortunately.">
+              <span class="thumb thumb--placeholder">
+                <img class="thumb-img" src="https://i.ytimg.com/vi/a4PeKHs-CcY/maxresdefault.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" onerror="if(!this.dataset.f){this.dataset.f=1;this.src=this.src.replace('maxresdefault','hqdefault')}else{this.remove()}">
+                <span class="thumb-play">play</span>
+              </span>
+              <span class="card-title">What’s the Worst Thing You’ve Ever Done?<span class="card-time">4:12</span></span>
+              <span class="card-logline">He’s in a better place now. Unfortunately.</span>
+            </button>
+          </li>
+          <li>
+            <button class="video-card" type="button"
+                    data-youtube="Q43YrrSoYss"
+                    data-title="Looking Forward"
+                    data-logline="The future’s so bright it hurts to look at.">
+              <span class="thumb thumb--placeholder">
+                <img class="thumb-img" src="https://i.ytimg.com/vi/Q43YrrSoYss/maxresdefault.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" onerror="if(!this.dataset.f){this.dataset.f=1;this.src=this.src.replace('maxresdefault','hqdefault')}else{this.remove()}">
+                <span class="thumb-play">play</span>
+              </span>
+              <span class="card-title">Looking Forward<span class="card-time">1:45</span></span>
+              <span class="card-logline">The future’s so bright it hurts to look at.</span>
+            </button>
+          </li>
+        </ul>
+      </section>
+
+      <section class="video-section" id="parodies" aria-labelledby="parodies-title">
+        <h2 class="section-title" id="parodies-title">commercial parodies</h2>
+        <ul class="video-grid above-vhs">
+          <li>
+            <button class="video-card" type="button"
+                    data-youtube="NzWE-2j9pn4"
+                    data-title="Lockheed Martin Goes Green"
+                    data-logline="Lockheed Martin is the world’s largest offense contractor. When it comes to war, they mean business.">
+              <span class="thumb thumb--placeholder">
+                <img class="thumb-img" src="https://i.ytimg.com/vi/NzWE-2j9pn4/maxresdefault.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" onerror="if(!this.dataset.f){this.dataset.f=1;this.src=this.src.replace('maxresdefault','hqdefault')}else{this.remove()}">
+                <span class="thumb-play">play</span>
+              </span>
+              <span class="card-title">Lockheed Martin Goes Green<span class="card-time">1:51</span></span>
+              <span class="card-logline">Lockheed Martin is the world’s largest offense contractor. When it comes to war, they mean business.</span>
+            </button>
+          </li>
+          <li>
+            <button class="video-card" type="button"
+                    data-youtube="aOMmQZe1b3A"
+                    data-title="A Message from Flock"
+                    data-logline="An honest mistake.">
+              <span class="thumb thumb--placeholder">
+                <img class="thumb-img" src="https://i.ytimg.com/vi/aOMmQZe1b3A/maxresdefault.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" onerror="if(!this.dataset.f){this.dataset.f=1;this.src=this.src.replace('maxresdefault','hqdefault')}else{this.remove()}">
+                <span class="thumb-play">play</span>
+              </span>
+              <span class="card-title">A Message from Flock<span class="card-time">1:33</span></span>
+              <span class="card-logline">An honest mistake.</span>
+            </button>
+          </li>
+          <li>
+            <button class="video-card" type="button"
+                    data-youtube="wpSnRPTOJas"
+                    data-title="Donald Trump’s New Book"
+                    data-logline="Burn your other books to make room for this one!">
+              <span class="thumb thumb--placeholder">
+                <img class="thumb-img" src="https://i.ytimg.com/vi/wpSnRPTOJas/maxresdefault.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" onerror="if(!this.dataset.f){this.dataset.f=1;this.src=this.src.replace('maxresdefault','hqdefault')}else{this.remove()}">
+                <span class="thumb-play">play</span>
+              </span>
+              <span class="card-title">Donald Trump’s New Book<span class="card-time">0:57</span></span>
+              <span class="card-logline">Burn your other books to make room for this one!</span>
+            </button>
+          </li>
+          <li>
+            <button class="video-card" type="button"
+                    data-youtube="hBSiRXNR5Jk"
+                    data-title="Skincare"
+                    data-logline="So I stress out, then I break out, then I stress out even more!">
+              <span class="thumb thumb--placeholder">
+                <img class="thumb-img" src="https://i.ytimg.com/vi/hBSiRXNR5Jk/maxresdefault.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" onerror="if(!this.dataset.f){this.dataset.f=1;this.src=this.src.replace('maxresdefault','hqdefault')}else{this.remove()}">
+                <span class="thumb-play">play</span>
+              </span>
+              <span class="card-title">Skincare<span class="card-time">1:03</span></span>
+              <span class="card-logline">So I stress out, then I break out, then I stress out even more!</span>
+            </button>
+          </li>
+        </ul>
+      </section>
+    </main>
+  </div>
+
+  <dialog class="lightbox vbox" aria-label="Video player">
+    <button class="lb-close" type="button">close</button>
+    <div class="vb-stage">
+      <div class="vb-frame"></div>
+      <div class="vb-caption">
+        <p class="vb-title"></p>
+        <p class="vb-logline"></p>
+      </div>
+    </div>
+  </dialog>
+
+  <div class="vhs" aria-hidden="true"></div>
+</body>
+</html>
