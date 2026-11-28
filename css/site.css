@@ -30,6 +30,10 @@
   --ink: #f4f4f4;           /* text colour sampled from the mockup */
   --night: #05112b;         /* behind everything, before images load */
   --red-fringe: rgba(255, 40, 80, 0.75);
+  /* dark see-through panels behind content, for busy backgrounds */
+  --panel-bg: rgba(4, 7, 18, 0.82);
+  --panel-border: rgba(255, 255, 255, 0.12);
+  --panel-border-hover: rgba(255, 255, 255, 0.4);
   --cyan-fringe: rgba(0, 220, 255, 0.75);
 
   /* one artboard pixel, as a length */
@@ -365,10 +369,19 @@ body.page {
    CINEMATOGRAPHY
    ========================================================== */
 
+/* Generic panel: add class="panel" to any block of text */
+.panel {
+  padding: clamp(14px, 1.6vw, 22px) clamp(16px, 2vw, 26px);
+  border: 1px solid var(--panel-border);
+  background: var(--panel-bg);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
 /* Reading text: Roman weight, normal spacing so it reads easily */
 .blurb {
   margin: clamp(20px, 2.5vw, 32px) 0 0;
-  max-width: 62ch;
+  max-width: 66ch;
   font-family: "NHD Roman", "Helvetica Neue", Arial, sans-serif;
   font-weight: 400;
   font-size: clamp(17px, 1.35vw, 21px);
@@ -395,13 +408,24 @@ body.page {
 .still {
   display: block;
   width: 100%;
+  padding: 10px;
+  border: 1px solid var(--panel-border);
+  background: var(--panel-bg);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  cursor: zoom-in;
+  transition: border-color 0.25s, box-shadow 0.25s;
+  -webkit-tap-highlight-color: transparent;
+}
+.still:hover {
+  border-color: var(--panel-border-hover);
+  box-shadow: 0 0 28px rgba(150, 200, 255, 0.25);
+}
+.still-frame {
+  display: block;
   aspect-ratio: 5 / 3;          /* 1800 × 1080 */
-  padding: 0;
-  border: 0;
   overflow: hidden;
   background: #000;
-  cursor: zoom-in;
-  -webkit-tap-highlight-color: transparent;
 }
 .still img {
   display: block;
@@ -416,9 +440,9 @@ body.page {
   filter: brightness(1.08);
 }
 .still:focus-visible {
-  outline: 1px solid #fff;
-  outline-offset: 3px;
-  box-shadow: 0 0 24px rgba(150, 200, 255, 0.45);
+  outline: none;
+  border-color: var(--panel-border-hover);
+  box-shadow: 0 0 28px rgba(150, 200, 255, 0.35);
 }
 
 /* ---------- lightbox ---------- */
@@ -614,8 +638,8 @@ html:has(.lightbox[open]) { overflow: hidden; }   /* page doesn't scroll behind 
   display: block;
   width: 100%;
   padding: 10px 10px 16px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(4, 7, 18, 0.82);
+  border: 1px solid var(--panel-border);
+  background: var(--panel-bg);
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
   color: var(--ink);
@@ -627,7 +651,7 @@ html:has(.lightbox[open]) { overflow: hidden; }   /* page doesn't scroll behind 
 }
 .video-card:hover,
 .video-card:focus-visible {
-  border-color: rgba(255, 255, 255, 0.4);
+  border-color: var(--panel-border-hover);
   box-shadow: 0 0 28px rgba(150, 200, 255, 0.25);
 }
 .thumb {
