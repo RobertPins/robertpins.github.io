@@ -381,7 +381,7 @@ body.page {
 /* Reading text: Roman weight, normal spacing so it reads easily */
 .blurb {
   margin: clamp(20px, 2.5vw, 32px) 0 0;
-  max-width: 66ch;
+  max-width: 62ch;
   font-family: "NHD Roman", "Helvetica Neue", Arial, sans-serif;
   font-weight: 400;
   font-size: clamp(17px, 1.35vw, 21px);
@@ -408,24 +408,13 @@ body.page {
 .still {
   display: block;
   width: 100%;
-  padding: 10px;
-  border: 1px solid var(--panel-border);
-  background: var(--panel-bg);
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
-  cursor: zoom-in;
-  transition: border-color 0.25s, box-shadow 0.25s;
-  -webkit-tap-highlight-color: transparent;
-}
-.still:hover {
-  border-color: var(--panel-border-hover);
-  box-shadow: 0 0 28px rgba(150, 200, 255, 0.25);
-}
-.still-frame {
-  display: block;
   aspect-ratio: 5 / 3;          /* 1800 × 1080 */
+  padding: 0;
+  border: 0;
   overflow: hidden;
   background: #000;
+  cursor: zoom-in;
+  -webkit-tap-highlight-color: transparent;
 }
 .still img {
   display: block;
@@ -440,9 +429,9 @@ body.page {
   filter: brightness(1.08);
 }
 .still:focus-visible {
-  outline: none;
-  border-color: var(--panel-border-hover);
-  box-shadow: 0 0 28px rgba(150, 200, 255, 0.35);
+  outline: 1px solid #fff;
+  outline-offset: 3px;
+  box-shadow: 0 0 24px rgba(150, 200, 255, 0.45);
 }
 
 /* ---------- lightbox ---------- */
