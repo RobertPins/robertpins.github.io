@@ -191,7 +191,7 @@ body.home {
   font-weight: 200;
   font-size: calc(84 * var(--u));
   line-height: calc(100 * var(--u));
-  letter-spacing: -0.05em;
+  letter-spacing: -0.03em;
   -webkit-text-stroke: calc(0.5 * var(--u)) currentColor; /* matches Photoshop's slightly heavier rendering */
   color: var(--ink);
   text-decoration: none;
@@ -321,7 +321,7 @@ body.page {
   font-family: "NHD XThin", "Helvetica Neue", Arial, sans-serif;
   font-weight: 200;
   font-size: clamp(22px, 2.4vw, 34px);
-  letter-spacing: -0.025em;
+  letter-spacing: -0.01em;
   color: var(--ink);
   text-decoration: none;
 }
@@ -342,7 +342,7 @@ body.page {
   font-weight: 200;
   font-size: clamp(52px, 7.5vw, 136px);
   line-height: 0.95;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.03em;
 }
 
 .page-body {
@@ -352,7 +352,7 @@ body.page {
   font-weight: 200;
   font-size: clamp(24px, 2.6vw, 38px);
   line-height: 1.25;
-  letter-spacing: -0.005em;
+  letter-spacing: 0.005em;
 }
 .page-body a {
   color: #fff;
@@ -485,7 +485,7 @@ html:has(.lightbox[open]) { overflow: hidden; }   /* page doesn't scroll behind 
   font-family: "NHD XThin", "Helvetica Neue", Arial, sans-serif;
   font-weight: 200;
   font-size: clamp(22px, 2vw, 30px);
-  letter-spacing: -0.015em;
+  letter-spacing: 0em;
   color: var(--ink);
 }
 .lb-close, .lb-prev, .lb-next {
@@ -533,7 +533,7 @@ html:has(.lightbox[open]) { overflow: hidden; }   /* page doesn't scroll behind 
   font-family: "NHD XThin", "Helvetica Neue", Arial, sans-serif;
   font-weight: 200;
   line-height: 1.19;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.03em;
   -webkit-text-stroke: 0.3px currentColor;
   color: var(--ink);
   text-decoration: none;
@@ -586,7 +586,7 @@ html:has(.lightbox[open]) { overflow: hidden; }   /* page doesn't scroll behind 
   font-weight: 200;
   font-size: clamp(40px, 5vw, 84px);
   line-height: 1;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.03em;
 }
 .section-blurb {
   margin: 14px 0 0;
@@ -606,16 +606,29 @@ html:has(.lightbox[open]) { overflow: hidden; }   /* page doesn't scroll behind 
   gap: clamp(26px, 3vw, 40px) clamp(14px, 1.6vw, 24px);
 }
 
+.video-grid > li { display: flex; }   /* cards in a row share one height */
+
+/* Each card sits on a dark, slightly see-through panel so the
+   thumbnail and text stay readable over a busy background. */
 .video-card {
   display: block;
   width: 100%;
-  padding: 0;
-  border: 0;
-  background: none;
+  padding: 10px 10px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(4, 7, 18, 0.82);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
   color: var(--ink);
   text-align: left;
+  text-decoration: none;
   cursor: pointer;
+  transition: border-color 0.25s, box-shadow 0.25s;
   -webkit-tap-highlight-color: transparent;
+}
+.video-card:hover,
+.video-card:focus-visible {
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 28px rgba(150, 200, 255, 0.25);
 }
 .thumb {
   position: relative;
@@ -661,7 +674,7 @@ html:has(.lightbox[open]) { overflow: hidden; }   /* page doesn't scroll behind 
   font-family: "NHD XThin", "Helvetica Neue", Arial, sans-serif;
   font-weight: 200;
   font-size: clamp(26px, 2.2vw, 34px);
-  letter-spacing: -0.035em;
+  letter-spacing: -0.02em;
   color: #fff;
   text-shadow:
     -1.5px 0 var(--red-fringe),
@@ -689,12 +702,13 @@ html:has(.lightbox[open]) { overflow: hidden; }   /* page doesn't scroll behind 
 
 .card-title {
   display: block;
-  margin-top: 12px;
+  margin-top: 14px;
+  padding: 0 4px;
   font-family: "NHD XThin", "Helvetica Neue", Arial, sans-serif;
   font-weight: 200;
   font-size: clamp(24px, 2vw, 32px);
   line-height: 1.1;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.02em;
   -webkit-text-stroke: 0.3px currentColor;
 }
 .card-time {                 /* Roman so the colon in 2:58 stays visible */
@@ -709,10 +723,11 @@ html:has(.lightbox[open]) { overflow: hidden; }   /* page doesn't scroll behind 
 .card-logline {
   display: block;
   margin-top: 6px;
+  padding: 0 4px;
   font-family: "NHD Roman", "Helvetica Neue", Arial, sans-serif;
   font-size: clamp(15px, 1.05vw, 17px);
   line-height: 1.45;
-  opacity: 0.8;
+  opacity: 0.85;
 }
 .video-card:hover .card-title,
 .video-card:focus-visible .card-title {
@@ -763,7 +778,7 @@ html:has(.lightbox[open]) { overflow: hidden; }   /* page doesn't scroll behind 
   background: rgba(0, 0, 0, 0.75);
   font-family: "NHD XThin", "Helvetica Neue", Arial, sans-serif;
   font-size: clamp(24px, 2.4vw, 40px);
-  letter-spacing: -0.035em;
+  letter-spacing: -0.02em;
 }
 .vb-caption { width: var(--vb-w); }
 .vb-title {
@@ -771,7 +786,7 @@ html:has(.lightbox[open]) { overflow: hidden; }   /* page doesn't scroll behind 
   font-family: "NHD XThin", "Helvetica Neue", Arial, sans-serif;
   font-weight: 200;
   font-size: clamp(24px, 2.2vw, 36px);
-  letter-spacing: -0.035em;
+  letter-spacing: -0.02em;
   -webkit-text-stroke: 0.3px currentColor;
 }
 .vb-logline {
